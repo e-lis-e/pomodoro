@@ -87,10 +87,18 @@ function App() {
       setTimeLeft(isBreak ? 5 * 60 : 25 * 60);
     }
   }
+
+  const handleCloseClick = () => {
+    if (window.electronAPI?.closeApp) {
+      window.electronAPI.closeApp();
+    } else {
+      console.warn("Electron API not available");
+    }
+  }
   return (
     <div className="{homeContainer}" style={{ position: 'relative' }}>
       <div>
-        <button className='closeButton'>
+        <button className='closeButton' onClick={handleCloseClick}>
           Close
         </button>
       </div>

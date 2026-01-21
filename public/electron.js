@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron');
+const { ipcMain} = require('electron');
 const url = require('url');
 const path = require('path');
 
@@ -9,6 +10,11 @@ function createMainWindow() {
         height: 400,
         frame: false,
         titleBarStyle: 'hidden',
+        webPreferences: {
+            preload: path.join(__dirname,"preload.js"),
+            contextIsolation: true,
+            nodeIntegration: false,
+        }
     });
 
     const startUrl = url.format({
@@ -20,6 +26,10 @@ function createMainWindow() {
     mainWindow.setWindowButtonVisibility(false);
     mainWindow.setMenuBarVisibility(false);
     mainWindow.loadURL(startUrl); // load app in electron
+
+    ipcMain.on('close-app', () => {
+        app.quit();
+    })
 }
 
 app.whenReady().then(createMainWindow);
