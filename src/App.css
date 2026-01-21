@@ -1,38 +1,89 @@
-.App {
+body {
+  font-family: "Marker Felt", fantasy;
+  margin: 0;
+  padding: 0;
+}
+
+.homeContainer {
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-sizing: border-box;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.homeContent {
+  background-image: url('./assets/capa.jpeg');
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.encouragementText {
+  font-size: 1.25rem;
+  color: #627077;
+  margin-bottom: 0.5rem;
+  animation: fadeIn 1s ease-in-out;
+  transition: opacity 0.8s ease;
+
+}
+
+.encouragementText.hidden {
+  opacity: 0;
+}
+
+.homeControls {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.imageButton {
+  background: none;
+  border-width: 2px;
+  border-style: dotted;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.homeTimer {
+  font-size: 60px;
+  color: #db5656;
+  margin: 0;
+}
+
+
+.homeButton {
+  background: none;
+  border-width: 2px;
+  border-style: dotted;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border-width: 2px;
+  border-style: dotted;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: 10px;
 }
