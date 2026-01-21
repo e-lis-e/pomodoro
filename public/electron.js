@@ -6,7 +6,9 @@ function createMainWindow() {
     const mainWindow = new BrowserWindow({
         title: 'Pomodoro',
         width: 400,
-        height: 430,
+        height: 400,
+        frame: false,
+        titleBarStyle: 'hidden',
     });
 
     const startUrl = url.format({
@@ -15,6 +17,8 @@ function createMainWindow() {
         slashes:true,
     });
 
+    mainWindow.setWindowButtonVisibility(false);
+    mainWindow.setMenuBarVisibility(false);
     mainWindow.loadURL(startUrl); // load app in electron
 }
 
