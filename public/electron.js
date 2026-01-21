@@ -1,0 +1,18 @@
+const { app, BrowserWindow } = require('electron');
+const url = require('url');
+const path = require('path');
+
+function createMainWindow() {
+    const mainWindow = new BrowserWindow({
+        title: 'Pomodoro',
+        width: 400,
+        height: 430,
+    });
+
+    const startUrl = url.format({
+        pathname: path.join(__dirname, '../build/index.html'), //connect to the react app
+        slashes:true,
+    });
+
+    mainWindow.loadURL(startUrl);
+}
