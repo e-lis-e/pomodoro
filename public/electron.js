@@ -11,6 +11,7 @@ function createMainWindow() {
 
     const startUrl = url.format({
         pathname: path.join(__dirname, '../build/index.html'), //connect to the react app
+        protocol:'file:',
         slashes:true,
     });
 
