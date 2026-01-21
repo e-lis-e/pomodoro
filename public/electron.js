@@ -23,8 +23,6 @@ function createMainWindow() {
         slashes:true,
     });
 
-    mainWindow.setWindowButtonVisibility(false);
-    mainWindow.setMenuBarVisibility(false);
     mainWindow.loadURL(startUrl); // load app in electron
 
     ipcMain.on('close-app', () => {

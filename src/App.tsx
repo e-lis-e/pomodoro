@@ -96,7 +96,7 @@ function App() {
     }
   }
   return (
-    <div className="{homeContainer}" style={{ position: 'relative' }}>
+    <div className="homeContainer" style={{ position: 'relative' }}>
       <div>
         <button className='closeButton' onClick={handleCloseClick}>
           Close
