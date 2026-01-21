@@ -6,7 +6,7 @@ import fanfare from "./assets/fanfare.mp3";
 
 function App() {
 
-  const [timeLeft, setTimeLeft] = useState(1 * 60);
+  const [timeLeft, setTimeLeft] = useState(25 * 60);
   const [isRunning, setIsRunning] = useState(false);
   const [isBreak, setIsBreak] = useState(false);
   const [encouragement, setEncouragement] = useState("");
@@ -61,7 +61,7 @@ function App() {
         console.error("audio play failed:", err);
       });
       setIsRunning(false);
-      setTimeLeft(isBreak ? 5 * 60 : 1 * 60);
+      setTimeLeft(isBreak ? 5 * 60 : 25 * 60);
     }
   }, [timeLeft]);
   const formatTime = (seconds: number): string => {
@@ -75,7 +75,7 @@ function App() {
   const swicthMode = (breakMode: boolean) => {
     setIsBreak(breakMode);
     setIsRunning(false);
-    setTimeLeft(breakMode ? 5 * 60 : 1 * 60);
+    setTimeLeft(breakMode ? 5 * 60 : 25 * 60);
   }
 
   // run timer
@@ -84,7 +84,7 @@ function App() {
       setIsRunning(true);
     } else {
       setIsRunning(false);
-      setTimeLeft(isBreak ? 5 * 60 : 1 * 60);
+      setTimeLeft(isBreak ? 5 * 60 : 25 * 60);
     }
   }
   return (
