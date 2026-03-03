@@ -25,6 +25,20 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+   "build": {
+    "appId": "com.pomodoro",
+    "productName": "Pomodoro",
+    "files": [
+      "build/**/*",
+      "public/electron.js"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "icon": "public/icons/icon.ico"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
